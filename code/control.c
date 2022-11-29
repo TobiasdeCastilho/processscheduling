@@ -12,7 +12,7 @@ int ListAllProcess(Control *c){
 
 int ListAllFinishedProcess(Control *c){
    ProcessFinished *pf = c->ended;
-   printf("PID  |NAME     |CPU - I |CPU - I |I\\O - I |I\\O - F |PRIORITY - I|PRIORITY - F|INSERTED    |ENDED       ");
+   printf("PID  |NAME     |CPU - I |CPU - F |I\\O - I |I\\O - F |PRIORITY - I|PRIORITY - F|INSERTED    |ENDED       ");
    while(pf != NULL){
       printf("\r\n%5d|%9s|%8d|%8d|%8d|%8d|%12d|%12d|%.12ld|%.12ld",(pf->process)->pid,(pf->process)->name,(pf->process)->initialruns,(pf->process)->runs,(pf->process)->initialblocks,(pf->process)->blocks,(pf->process)->initialpriority,(pf->process)->priority,(pf->process)->inserted,(pf->process)->ended);
       pf = pf->next;
